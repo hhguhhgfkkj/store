@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <title></title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="style.css">
+     <style type="text/css" media="all">
+          /* Reset styles */
+          html {
+               font-family: 'Courgette', cursive;
+          }
+          *, *::before, *::after {
+               box-sizing: border-box;
+               margin: 0;
+               padding: 0;
+          }
+
+          /* Global styles */
+          body {
+               font-size: 16px;
+               line-height: 1.6;
+               font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+               background: #000000;
+          }
+
+          /* Header styles */
+          .header {
+               background: #52057B;
+               background-size: cover;
+               position: relative;
+               color: #fff;
+               padding: 20px;
+          }
+          .header::before {
+               content: "";
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               background-color: rgba(28, 28, 28, 0.85);
+               z-index: -1;
+          }
+          .logo {
+               font-size: 30px;
+               font-weight: bold;
+               font-family: "Playfair Display", serif;
+               margin-bottom: 20px;
+          }
+          .nav-links {
+               display: flex;
+               list-style: none;
+               font-size: 15px;
+               color: #000;
+
+               perspective: 1000px;
+          }
+
+          ul {
+               transform-style: preserve-3d;
+          }
+
+          li {
+               transform-style: preserve-3d;
+
+          }
+
+
+          .nav-links li {
+               margin-right: 20px;
+
+          }
+
+          .nav-links li a {
+               text-decoration: none;
+               color: #000;
+               font-weight: bold;
+               transition: all 0.3s ease-in-out;
+          }
+
+          .nav-links li a:hover {
+               background-color: #fff;
+               color: #000;
+               border-radius: 5px;
+          }
+          /* Product list styles */
+
+          .product-list {
+               padding: 40px 20px;
+          }
+
+          .product-list h2 {
+               font-size: 2.5rem;
+               font-family: "Montserrat", sans-serif;
+               font-weight: bold;
+               margin-bottom: 40px;
+               color: #FFFFFF;
+          }
+
+          .products {
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: center;
+
+          }
+
+          .product {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               margin: 20px;
+               padding: 20px;
+               border-radius: 10px;
+               box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+               transition: all 0.3s ease-in-out;
+               background: #52057B;
+          }
+          .product img {
+               width: 200px;
+               height: 200px;
+               object-fit: cover;
+               border-radius: 50%;
+               margin-bottom: 20px;
+          }
+
+          .product h3 {
+               font-size: 1.8rem;
+               font-weight: bold;
+               margin-bottom: 10px;
+          }
+
+          .product .description {
+               text-align: center;
+               margin-bottom: 20px;
+          }
+
+          .price {
+               font-weight: bold;
+               font-size: 1.8rem;
+               margin-bottom: 30px;
+          }
+
+          button {
+               background-color: #BC6FF1;
+               color: #000;
+               border: none;
+               border-radius: 5px;
+               padding: 10px;
+               cursor: pointer;
+               transition: all 0.3s ease-in-out;
+          }
+
+          button:hover {
+               background-color: #892CDC;
+               color: #52057B;
+          }
+          .left-arrow {
+               background: #892CDC;
+               font-size: 35px;
+               border-radius: 30%;
+          }
+          .right-arrow {
+               background: #892CDC;
+               font-size: 35px;
+               border-radius: 30%;
+          }
+          .content {
+               display: flex;
+               justify-content: center;
+               flex-direction: row;
+               flex-wrap: wrap;
+          }
+
+          .card {
+               background-color: #BC6FF1;
+               width: 21.25em;
+               box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+               border-radius: 10px;
+               padding: 25px;
+               margin: 15px;
+               transition: 0.7s ease;
+          }
+
+          .card:hover {
+               transform: scale(1.1);
+          }
+
+          .card .icon {
+               color: #fff;
+               font-size: 8em;
+               text-align: center;
+          }
+
+          .info {
+               text-align: center;
+          }
+
+          .info h3 {
+               color: #3a6cf4;
+               font-size: 1.2em;
+               font-weight: 700;
+               margin: 10px;
+          }
+
+          .projects {
+               background-color: black;
+          }
+
+          .projects .content {
+               margin-top: 30px;
+               margin-
+          }
+
+          .project-card {
+               background-color: #fff;
+               border: 1px solid #fff;
+               min-height: 14em;
+               width: 23em;
+               overflow: hidden;
+               border-radius: 10px;
+               margin: 20px;
+               transition: 0.7s ease;
+          }
+
+          .project-card:hover {
+               transform: scale(1.1);
+          }
+
+          .project-card:hover .project-image {
+               opacity: 0.9;
+          }
+
+          .project-image img {
+               width: 100%
+          }
+
+          .project-info {
+               padding: 1em;
+          }
+
+          .project-category {
+               font-size: 0.8em;
+               color: #000;
+          }
+
+          .project-title {
+               display: flex;
+               justify-content: space-between;
+               text-transform: uppercase;
+               font-weight: 800;
+               margin-top: 10px;
+          }
+
+          .more-details {
+               text-decoration: none;
+               color: #3a6cf4;
+          }
+
+          .more-details:hover {
+               color: #601cfc;
+          }
+
+          .contact .icon {
+               font-size: 4.5em;
+          }
+
+          .contact .info h3 {
+               color: #000;
+          }
+
+          .contact .info p {
+               font-size: 1.5em;
+          }
+          .footer {
+               background-color: #52057B;
+               color: #fff;
+               padding: 2em;
+               display: flex;
+               justify-content: space-between;
+          }
+          .main {
+
+               min-height: 100vh;
+               display: flex;
+               align-items: center;
+               background: #;
+               background-size: cover;
+               background-position: center;
+               background-attachment: fixed;
+          }
+
+          .main h2 {
+               color: #52057B;
+               font-size: 1.4em;
+               font-weight: 500;
+          }
+
+          .main h2 span {
+               display: inline-block;
+               margin-top: 10px;
+               color: #892CDC;
+               font-size: 15px;
+               font-weight: 600;
+          }
+
+          .main h3 {
+               color: #fff;
+               font-size: 2em;
+               font-weight: 700;
+               letter-spacing: 1px;
+               margin-top: 10px;
+               margin-bottom: 30px;
+          }
+
+          .main-btn {
+               color: #000;
+               background-color: #52057B;
+               text-decoration: none;
+               font-size: 1.1em;
+               font-weight: 600;
+               display: inline-block;
+               padding: 0.9375em 2.1875em;
+               letter-spacing: 1px;
+               border-radius: 15px;
+               margin-bottom: 40px;
+               transition: 0.7s ease;
+          }
+
+          .main-btn:hover {
+               background-color: #BC6FF1;
+               transform: scale(1.1);
+          }
+
+     </style>
+</head>
+<body>
+     <header class="header">
+          <h1 class="logo">تسويق دوار الماء</h1>
+          <nav>
+               <ul class="nav-links">
+                    <li><a href="#main">الرئيسية</a></li>
+
+                    <li><a href="#product-list">منتجتنا</a></li>
+
+                    <li><a href="#contact">اتصل بنا</a></l>
+               </ul>
+          </nav>
+     </header>
+     <section class="main" id="main">
+          <div>
+               <h2>تسويق دوار الماء</h2>
+               <h3>بيع جميع انواع المجوهرات   الغير الثمينة وساعات التوصيل متوفر لجميع الولايات</h3>
+               <a href="#projects" class="main-btn">View my work</a>
+          </div>
+     </div>
+</section>
+
+<section class="product-list" id="product-list">
+     <h2>منتجاتنا</h2>
+     <div class="product">
+          <div class="image-container">
+               <span class="arrow left-arrow">&#8249;</span>
+               <img src="p1.jpg" class="product-image">
+               <span class="arrow right-arrow">&#8250;</span>
+          </div>
+          <h3>مجوهرات و عقد</h3>
+          <p>
+               نوع: مطحون فضة مطلى عيار 925 استيراد
+          </p>
+          <span class="price">السعر 300د.ج</span>
+          <button>شراء</button>
+     </div>
+</section>
+
+<section class="cards contact" id="contact">
+     <h2 class="title">تواصل معنا</h2>
+     <div class="content">
+          <div class="card">
+               <div class="icon">
+                    <i class="fas fa-phone"></i>
+               </div>
+               <div class="info">
+                    <h3>Phone</h3>
+                    <p>
+                         +000000000
+                    </p>
+               </div>
+          </div>
+          <div class="card">
+               <div class="icon">
+                    <i class="fas fa-envelope"></i>
+               </div>
+               <div class="info">
+                    <h3>gmail</h3>
+                    <p>
+                         example@gmail.com
+                    </p>
+               </div>
+          </div>
+     </div>
+     <div class="card">
+          <div class="icon">
+               <i class="fas fa-phone"></i>
+          </div>
+          <div class="info">
+               <h3>facebook</h3>
+               <p>
+                    https://www.facebook.com/
+               </p>
+          </div>
+     </div>
+</section>
+<footer class="footer">
+     <p>
+          جميع الحقوق محفوظة © 2023
+     </p>
+</footer>
+<script type="text/javascript" charset="utf-8">
+     const productImage = document.querySelector('.product-image');
+     const leftArrow = document.querySelector('.left-arrow');
+     const rightArrow = document.querySelector('.right-arrow');
+
+     const images = ['p1.jpg', 'p2.jpg', 'p3.jpg'];
+     let currentImageIndex = 0;
+
+     leftArrow.addEventListener('click', () => {
+          currentImageIndex--;
+          if (currentImageIndex < 0) {
+               currentImageIndex = images.length - 1;
+          }
+          productImage.src = images[currentImageIndex];
+     });
+
+     rightArrow.addEventListener('click', () => {
+          currentImageIndex++;
+          if (currentImageIndex >= images.length) {
+               currentImageIndex = 0;
+          }
+          productImage.src = images[currentImageIndex];
+     });
+
+
+     const btnBuy = document.querySelector('button');
+     const phoneNumber = "0792400273";
+
+     btnBuy.addEventListener('click', () => {
+          window.location.href = 'tel:' + phoneNumber;
+     });
+</script>
+</body>
+</html>
